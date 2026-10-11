@@ -1,0 +1,10 @@
+package com.example.vehicleservicecenter.dto;
+
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import java.time.LocalDateTime;
+
+public record ServiceBookingRequest(@NotNull Long vehicleId,
+ @NotBlank @Size(max=1000) String description, @NotNull @Future LocalDateTime scheduledAt) {}
